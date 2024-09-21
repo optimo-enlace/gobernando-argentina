@@ -146,7 +146,7 @@ function checkAnswer(selectedOption) {
 function showFinalScore() {
     document.getElementById('gameArea').innerHTML = `<h2>Tu puntuación es ${score} de ${questions[currentLevel].length}</h2>`;
     document.getElementById('restartBtn').innerHTML = 'Volver al Menú';
-    document.getElementById('restartBtn').onclick = () => window.location.href = 'menu.html';
+    document.getElementById('restartBtn').onclick = () => window.location.href = 'index.html';
     document.getElementById('restartBtn').classList.remove('hidden');
 }
 
