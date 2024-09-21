@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego sobre los Tres Poderes del Estado</title>
+    <style>
+        /* Estilos generales */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #a2c2e6, #e0f7fa);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        /* Contenedor principal */
+        .container {
+            text-align: center;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+            max-width: 900px;
+            width: 100%;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .container:hover {
+            transform: scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Títulos */
+        header h1 {
+            font-size: 3.5em;
+            color: #004d40;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        header h2 {
+            font-size: 1.8em;
+            color: #00796b;
+            margin-bottom: 25px;
+            font-weight: 300;
+        }
+
+        /* Lista de opciones del menú */
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 15px 0;
+        }
+
+        /* Estilo de los enlaces */
+        a {
+            display: inline-block;
+            text-decoration: none;
+            color: #fff;
+            font-size: 1.3em;
+            padding: 15px 30px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #004d40, #00796b);
+            transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        a:hover {
+            background: linear-gradient(135deg, #00796b, #004d40);
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Secciones ocultas */
+        .hidden {
+            display: none;
+        }
+
+        /* Estilo de subtítulos y párrafos */
+        h2 {
+            color: #00796b;
+            margin-top: 20px;
+            font-size: 1.5em;
+            text-align: left;
+        }
+
+        p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #555;
+            text-align: left;
+        }
+
+        /* Botón de "Volver al Menú" */
+        .back-button {
+            margin-top: 20px;
+            padding: 12px 25px;
+            background: linear-gradient(135deg, #ff5722, #ff9800);
+            border-radius: 12px;
+            color: #fff;
+            text-decoration: none;
+            transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .back-button:hover {
+            background: linear-gradient(135deg, #ff9800, #ff5722);
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Estilos responsivos */
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 2.8em;
+            }
+            header h2 {
+                font-size: 1.5em;
+            }
+            a {
+                font-size: 1.1em;
+                padding: 12px 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 id="menu-title">Juego sobre los Tres Poderes del Estado</h1>
+        </header>
+        <div id="menu">
+            <ul>
+                <li><a href="juego.html">Iniciar Juego</a></li>
+                <li><a href="#" onclick="showSection('instructions')">Instrucciones</a></li>
+                <li><a href="#" onclick="showSection('credits')">Créditos</a></li>
+            </ul>
+        </div>
+
+        <div id="instructions" class="hidden">
+            <h2>Instrucciones del Juego</h2>
+            <p>Bienvenido al juego sobre los tres poderes del Estado argentino. A través de preguntas y respuestas, aprenderás sobre el Poder Ejecutivo, Legislativo y Judicial.</p>
+            <p>Elige la respuesta correcta para avanzar y ganar puntos. ¡Diviértete aprendiendo!</p>
+            <a href="#" class="back-button" onclick="showSection('menu')">Volver al Menú</a>
+        </div>
+
+        <div id="credits" class="hidden">
+            <h2>Créditos</h2>
+            <p>Este juego fue creado por <strong>Dilan_E</strong>.</p>
+            <p>¡Síguelo en Instagram! <a href="https://www.instagram.com/dilanenriquez50?igsh=d3hieDllbjR0aHlu" target="_blank" style="color: #004d40;">dilanenriquez50</a></p>
+            <a href="#" class="back-button" onclick="showSection('menu')">Volver al Menú</a>
+        </div>
+
+        <div id="game" class="hidden">
+            <h2>Juego en Desarrollo</h2>
+            <p>Aquí irá el juego sobre los tres poderes del Estado.</p>
+            <a href="#" class="back-button" onclick="showSection('menu')">Volver al Menú</a>
+        </div>
+    </div>
+
+    <script>
+        function showSection(section) {
+            document.getElementById('menu').classList.add('hidden');
+            document.getElementById('instructions').classList.add('hidden');
+            document.getElementById('credits').classList.add('hidden');
+            document.getElementById('game').classList.add('hidden');
+
+            if (section === 'menu') {
+                document.getElementById('menu').classList.remove('hidden');
+            } else if (section === 'instructions') {
+                document.getElementById('instructions').classList.remove('hidden');
+            } else if (section === 'credits') {
+                document.getElementById('credits').classList.remove('hidden');
+            } else if (section === 'game') {
+                document.getElementById('game').classList.remove('hidden');
+            }
+        }
+    </script>
+</body>
+</html>

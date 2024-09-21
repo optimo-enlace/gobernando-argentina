@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Juego educativo para aprender los tres poderes del Estado argentino y su organización en los niveles nacional, provincial y municipal">
+    <title>Conoce el Gobierno - Juego Educativo</title>
+    <link rel="stylesheet" href="CSS y Js/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Conoce el Gobierno</h1>
+            <h2>Aprende sobre los tres poderes y cómo funcionan en los distintos niveles de gobierno</h2>
+        </header>
+
+        <p>Selecciona un nivel de gobierno para comenzar:</p>
+
+        <div class="levels">
+            <button onclick="startGame('Nacional')">Nacional</button>
+            <button onclick="startGame('Provincial')">Provincial</button>
+            <button onclick="startGame('Municipal')">Municipal</button>
+        </div>
+
+        <div id="gameArea" class="game-area">
+            <!-- Aquí aparecerán las preguntas -->
+        </div>
+
+        <div id="feedback" class="feedback">
+            <!-- Feedback de respuestas -->
+        </div>
+
+        <button id="restartBtn" class="hidden" onclick="restartGame()">Reiniciar Juego</button>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Juego educativo</p>
+    </footer>
+
+    <script src="CSS y Js/script.js"></script>
+</body>
+</html>
